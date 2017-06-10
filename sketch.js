@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  x = width/2;
-  y = height/2;
+  x = random(0,width);
+  y = random(0,height);
   velx = windowWidth/100;
   vely = windowHeight/120;
 }
@@ -18,5 +18,18 @@ function draw() {
 
   if(y<= 0 ||y >= height){
     vely = - vely;
+  }
+}
+
+function mousePressed() {
+  if(mouseIsPressed) {
+    var fs = fullscreen();
+    fullscreen(!fs);
+      if(!fs){
+        resizeCanvas(displayWidth, displayHeight);
+      }
+      else{
+        resizeCanvas(windowWidth, windowHeight);
+      }
   }
 }
