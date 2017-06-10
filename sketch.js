@@ -2,8 +2,18 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   x = random(0,width);
   y = random(0,height);
-  velx = windowWidth/100;
-  vely = windowHeight/120;
+  if(random(1)<=0.5){
+    velx = windowWidth/100;
+  }
+  else{
+    velx = - windowWidth/100;
+  }
+  if(random(1)<=0.5){
+    vely = windowHeight/120;
+  }
+  else{
+    vely = - windowHeight/120;
+  }
 }
 
 function draw() {
